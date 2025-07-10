@@ -1,10 +1,10 @@
 const NUM_GRIDS = 16;
-let grid_rows = new Array(NUM_GRIDS);
-for(let i = 0; i<NUM_GRIDS; ++i){
-    let row = new Array(NUM_GRIDS);
-    for(let j = 0; j<NUM_GRIDS; ++j){
-        row[j] = document.createElement("div");
-    }
-    grid_rows[i] = row;
-}
 let gridContainer = document.querySelector("#grid-container");
+for(let i = 0; i<NUM_GRIDS; ++i){
+    let gridRow = document.createElement("div");
+    gridRow.setAttribute("class","grid-row");
+    for(let j = 0; j<NUM_GRIDS; ++j){
+        gridRow.appendChild(document.createElement("div"));
+    }
+    gridContainer.appendChild(gridRow);
+}
