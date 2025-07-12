@@ -1,3 +1,4 @@
+let gridContainer = document.querySelector("#grid-container");
 let num_grids = 16;
 let btn = document.querySelector("button");
 btn.addEventListener("click", function(){
@@ -8,19 +9,18 @@ btn.addEventListener("click", function(){
             break;
         }
     }
-})
-
-let gridContainer = document.querySelector("#grid-container");
-for(let i = 0; i<num_grids; ++i){
-    let gridRow = document.createElement("div");
-    gridRow.setAttribute("class","grid-row");
-    for(let j = 0; j<num_grids; ++j){
-        grid = document.createElement("div");
-        grid.setAttribute("class","grid-square");
-        gridRow.appendChild(grid);
+    gridContainer.innerHTML = "";
+    for(let i = 0; i<num_grids; ++i){
+        let gridRow = document.createElement("div");
+        gridRow.setAttribute("class","grid-row");
+        for(let j = 0; j<num_grids; ++j){
+            grid = document.createElement("div");
+            grid.setAttribute("class","grid-square");
+            gridRow.appendChild(grid);
+        }
+        gridContainer.appendChild(gridRow);
     }
-    gridContainer.appendChild(gridRow);
-}
+})
 
 gridContainer.addEventListener("mouseover", function(event) {
     if(event.target.classList.contains("grid-square")){
