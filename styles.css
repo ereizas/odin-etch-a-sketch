@@ -18,3 +18,7 @@ html, body {
 .grid-row div {
     flex: 1 1 0;
 }
+
+.grid-square {
+    border: 1px solid #ccc;
+}
