@@ -1,13 +1,9 @@
 let gridContainer = document.querySelector("#grid-container");
-let num_grids = 16;
 let btn = document.querySelector("button");
 btn.addEventListener("click", function(){
-    while(1){
-        let temp = Number(prompt("Enter the number of grids you want (up to 100):","16"));
-        if(Number.isInteger(temp) && temp>0 && temp<=100){
-            num_grids = temp;
-            break;
-        }
+    let num_grids = -1;
+    while(!Number.isInteger(num_grids) || num_grids<=0 || num_grids>100){
+        num_grids = Number(prompt("Enter the number of grids you want (up to 100):","16"));
     }
     gridContainer.innerHTML = "";
     for(let i = 0; i<num_grids; ++i){
