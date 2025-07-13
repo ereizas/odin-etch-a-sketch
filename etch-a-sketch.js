@@ -1,3 +1,4 @@
+let opacity = 0.0;
 let gridContainer = document.querySelector("#grid-container");
 let btn = document.querySelector("button");
 btn.addEventListener("click", function(){
@@ -16,9 +17,14 @@ btn.addEventListener("click", function(){
         }
         gridContainer.appendChild(gridRow);
     }
+    opacity = 0;
 })
-gridContainer.addEventListener("mousemove", function(event) {
+
+gridContainer.addEventListener("mouseover", function(event) {
+    console.log(opacity);
     if(event.target.classList.contains("grid-square")){
         event.target.style.backgroundColor = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`;
+        event.target.style.opacity = opacity;
+        opacity+=0.1;
     }
 })
