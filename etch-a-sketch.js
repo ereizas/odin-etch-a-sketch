@@ -16,10 +16,9 @@ btn.addEventListener("click", function(){
         }
         gridContainer.appendChild(gridRow);
     }
-})
-
-gridContainer.addEventListener("mouseover", function(event) {
-    if(event.target.classList.contains("grid-square")){
-        event.target.style.backgroundColor = "blue";
-    }
+    gridContainer.addEventListener("mouseover", function(event) {
+        if(event.target.classList.contains("grid-square")){
+            event.target.style.backgroundColor = "blue";
+        }
+    })
 })
