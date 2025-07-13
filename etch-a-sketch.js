@@ -19,6 +19,6 @@ btn.addEventListener("click", function(){
 })
 gridContainer.addEventListener("mousemove", function(event) {
     if(event.target.classList.contains("grid-square")){
-        event.target.style.backgroundColor = "blue";
+        event.target.style.backgroundColor = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`;
     }
 })
